@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PhotoService } from '../services/photo.service';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+constructor(public photoService: PhotoService) { }
 
-  constructor() {}
-
+addPhotoToGallery() {
+  this.photoService.addNewToGallery();
+  }
 }
